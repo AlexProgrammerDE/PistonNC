@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <modelVersion>4.0.0</modelVersion>
 
-        <groupId>Leee.nc</groupId>
-        <artifactId>LeeesNC</artifactId>
-        <version>10.2.0</version>
+        <groupId>net.pistonmaster</groupId>
+        <artifactId>PistonNC</artifactId>
+        <version>1.0.0</version>
         <packaging>jar</packaging>
 
-        <name>LeeesNC</name>
+        <name>PistonNC</name>
 
-        <description>Leees Name Colour Plugin</description>
-        <url>http://6b6t.org</url>
+        <description>Easily control your name color ingame</description>
+        <url>https://pistonmaster.net</url>
 
         <build>
             <plugins>
@@ -25,6 +25,12 @@
                     </configuration>
                 </plugin>
             </plugins>
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <filtering>true</filtering>
+                </resource>
+            </resources>
         </build>
 
         <repositories>
@@ -40,7 +46,13 @@
             <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.16.1-R0.1-SNAPSHOT</version>
+                <version>1.17-R0.1-SNAPSHOT</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>

@@ -1,10 +1,10 @@
-name: LeeesNC
-version: 10.2.0
-main: Leee.nc.LeeesNC
-api-version: 1.16
-authors: [Nate, Legault, AlexProgrammerDE]
-description: Leees Name Colour Plugin
-website: https://www.6b6t.org
+name: PistonNC
+version: ${project.version}
+main: net.pistonmaster.namecolor.PistonNC
+api-version: 1.13
+authors: ["Nate Legault", "AlexProgrammerDE"]
+description: ${project.description}
+website: ${project.url}
 commands:
   nc:
     description: Change your name color.
@@ -13,7 +13,7 @@ commands:
     description: Change your item color.
     aliases: [itemcolor, itemcolour]
 permissions:
-  Leee.nc:
+  piston.nc:
     description: Gives access to changing name color via the /nc command
-  Leee.ic:
+  piston.ic:
     description: Gives access to changing item color via the /ic command

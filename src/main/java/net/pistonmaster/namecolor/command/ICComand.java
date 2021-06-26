@@ -1,6 +1,6 @@
-package Leee.nc.command;
+package net.pistonmaster.namecolor.command;
 
-import Leee.nc.LeeesNC;
+import net.pistonmaster.namecolor.PistonNC;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -23,7 +23,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "You must join the server to use this command");
+            sender.sendMessage(ChatColor.YELLOW + "PistonNC " + ChatColor.DARK_AQUA + "You must join the server to use this command");
             return false;
         } else {
             Player player = (Player) sender;
@@ -299,7 +299,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
 
                                 itemMeta.setDisplayName(newitem + ChatColor.RESET);
                                 item.setItemMeta(itemMeta);
-                                Leee.nc.LeeesNC.getPlugin(LeeesNC.class).getConfig().set(name, newitem + ChatColor.RESET);
+                                PistonNC.getPlugin(PistonNC.class).getConfig().set(name, newitem + ChatColor.RESET);
                                 item.setItemMeta(itemMeta);
 
                                 player.sendMessage("" + makeRainbow("Your item is now bold-rainbow", "" + ChatColor.BOLD));
@@ -833,7 +833,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
 
                                 itemMeta.setDisplayName(newitem + ChatColor.RESET);
                                 item.setItemMeta(itemMeta);
-                                Leee.nc.LeeesNC.getPlugin(LeeesNC.class).getConfig().set(name, newitem + ChatColor.RESET);
+                                PistonNC.getPlugin(PistonNC.class).getConfig().set(name, newitem + ChatColor.RESET);
                                 item.setItemMeta(itemMeta);
 
                                 player.sendMessage("" + makeRainbow("Your item is now underline-bold-rainbow", "" + ChatColor.UNDERLINE + ChatColor.BOLD));
@@ -971,7 +971,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
 
                                 itemMeta.setDisplayName(newitem + ChatColor.RESET);
                                 item.setItemMeta(itemMeta);
-                                Leee.nc.LeeesNC.getPlugin(LeeesNC.class).getConfig().set(name, newitem + ChatColor.RESET);
+                                PistonNC.getPlugin(PistonNC.class).getConfig().set(name, newitem + ChatColor.RESET);
                                 item.setItemMeta(itemMeta);
 
                                 player.sendMessage("" + makeRainbow("Your item is now strike-bold-rainbow", "" + ChatColor.STRIKETHROUGH + ChatColor.BOLD));
@@ -1114,17 +1114,17 @@ public class ICComand implements CommandExecutor, TabExecutor {
                                 player.sendMessage("" + ChatColor.RESET + "Your item has been reset");
                                 return true;
                             default:
-                                player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "Incorrect colour specification Type '/nc' for help");
+                                player.sendMessage(ChatColor.YELLOW + "PistonNC " + ChatColor.DARK_AQUA + "Incorrect colour specification Type '/nc' for help");
                                 return true;
 
 
                         }
                 } else {
-                        player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "You must hold a item to do that!");
+                        player.sendMessage(ChatColor.YELLOW + "PistonNC " + ChatColor.DARK_AQUA + "You must hold a item to do that!");
                     }
 
             } else {
-                player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "You must donate to the server to use this command. Type /donate to donate.");
+                player.sendMessage(ChatColor.YELLOW + "PistonNC " + ChatColor.DARK_AQUA + "You must donate to the server to use this command. Type /donate to donate.");
                 return true;
             }
         } else {
@@ -1164,7 +1164,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
                 String newname = builder.toString();
 
                 player.spigot().sendMessage(new TextComponent(ChatColor.BLUE + "--------------------------------------------"));
-                player.spigot().sendMessage(new TextComponent(ChatColor.AQUA + "(( LeeesNC ))"));
+                player.spigot().sendMessage(new TextComponent(ChatColor.AQUA + "(( PistonNC ))"));
                 player.spigot().sendMessage(new TextComponent(ChatColor.YELLOW + "(( /ic <colour> <type-colour> ))"));
                 player.spigot().sendMessage(new TextComponent(ChatColor.YELLOW + "(( /ic reset to reset your name ))"));
                 player.spigot().sendMessage(new TextComponent(ChatColor.AQUA + "(( Types ))"));
