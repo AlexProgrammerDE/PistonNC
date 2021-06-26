@@ -16,7 +16,7 @@ public class PistonNC extends JavaPlugin implements Listener {
         Logger log = getLogger();
 
         log.info(ChatColor.AQUA + "Registering events");
-        Bukkit.getServer().getPluginManager().registerEvents(new JoinListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new JoinListener(this), this);
 
         log.info(ChatColor.AQUA + "Registering command");
         Bukkit.getServer().getPluginCommand("nc").setExecutor(new NCCommand(this));
