@@ -35,7 +35,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         player.setPlayerListName(translate(args[0]));
                         plugin.getConfig().set(player.getName(), translate(args[0]));
                         plugin.saveConfig();
-                        player.sendMessage(ChatColor.GREEN + "Your name has been set to: " + translate(args[0]));
+                        player.sendMessage(ChatColor.GREEN + "Your name has been set to: " + ChatColor.RESET + translate(args[0]));
                     } else {
                         player.sendMessage(ChatColor.YELLOW + "PistonNC " + ChatColor.DARK_AQUA + "Incorrect colour specification Type '/nc' for help");
                     }
@@ -60,7 +60,12 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                 player.sendMessage("");
 
                 player.sendMessage(ChatColor.AQUA + "Valid format:");
-                player.sendMessage("§k&k §l&l §m&m §n&n §o&o §r&r");
+                player.sendMessage("§l&l§r §m&m§r §n&n§r §o&o§r §r&r");
+
+                player.sendMessage("");
+
+                player.sendMessage(ChatColor.AQUA + "Valid format:");
+                player.sendMessage("§k&k§r §l&l§r §m&m§r §n&n§r §o&o§r §r&r");
                 player.spigot().sendMessage(new TextComponent(ChatColor.BLUE + "--------------------------------------------"));
             }
 
