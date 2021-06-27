@@ -28,7 +28,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
         } else {
             Player player = (Player) sender;
             if (cmd.getName().equalsIgnoreCase("ic") && args.length != 0) {
-                if (player.hasPermission("Leee.ic")) {
+                if (player.hasPermission("piston.ic")) {
                     ItemStack item = player.getInventory().getItemInMainHand();
                     
                     ItemMeta itemMeta = item.getItemMeta();
@@ -1200,7 +1200,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            if (!player.hasPermission("Leee.nc")) {
+            if (!player.hasPermission("piston.nc")) {
                 return completions;
             }
 

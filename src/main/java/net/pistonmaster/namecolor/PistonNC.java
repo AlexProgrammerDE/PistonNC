@@ -15,10 +15,13 @@ public class PistonNC extends JavaPlugin implements Listener {
     public void onEnable() {
         Logger log = getLogger();
 
-        log.info(ChatColor.AQUA + "Registering events");
+        log.info(ChatColor.AQUA + "Loading config");
+        saveDefaultConfig();
+
+        log.info(ChatColor.AQUA + "Registering listeners");
         Bukkit.getServer().getPluginManager().registerEvents(new JoinListener(this), this);
 
-        log.info(ChatColor.AQUA + "Registering command");
+        log.info(ChatColor.AQUA + "Registering commands");
         Bukkit.getServer().getPluginCommand("nc").setExecutor(new NCCommand(this));
         Bukkit.getServer().getPluginCommand("nc").setTabCompleter(new NCCommand(this));
 

@@ -24,15 +24,18 @@ public class NCCommand implements CommandExecutor, TabExecutor {
             if (args.length != 0) {
                 if (player.hasPermission("piston.nc")) {
                     if ("reset".equals(args[0])) {
-                        player.setDisplayName(ChatColor.RESET + player.getName() + ChatColor.RESET);
-                        player.setPlayerListName(ChatColor.RESET + player.getName() + ChatColor.RESET);
-                        plugin.getConfig().set(player.getName(), ChatColor.RESET + player.getName() + ChatColor.RESET);
+                        player.setDisplayName(null);
+                        player.setPlayerListName(null);
+                        plugin.getConfig().set(player.getName(), null);
                         plugin.saveConfig();
                         player.sendMessage(ChatColor.GREEN + "Your name has been reset");
                         return true;
                     } else if (ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', args[0])).equals(player.getName())) {
                         player.setDisplayName(translate(args[0]));
-                        player.setPlayerListName(translate(args[0]));
+
+                        if (plugin.getConfig().getBoolean("changePlayerListName"))
+                            player.setPlayerListName(translate(args[0]));
+
                         plugin.getConfig().set(player.getName(), translate(args[0]));
                         plugin.saveConfig();
                         player.sendMessage(ChatColor.GREEN + "Your name has been set to: " + ChatColor.RESET + translate(args[0]));
@@ -63,9 +66,17 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                 player.sendMessage("§l&l§r §m&m§r §n&n§r §o&o§r §r&r");
 
                 player.sendMessage("");
+                player.sendMessage(ChatColor.AQUA + "Examples:");
+                player.sendMessage("&c" + player.getName() + " = §c" + player.getName());
+                player.sendMessage("&a&l" + player.getName() + " = §a§l" + player.getName());
 
-                player.sendMessage(ChatColor.AQUA + "Valid format:");
-                player.sendMessage("§k&k§r §l&l§r §m&m§r §n&n§r §o&o§r §r&r");
+                if (player.getName().length() > 1) {
+                    final int mid = player.getName().length() / 2; //get the middle of the String
+                    String[] parts = {player.getName().substring(0, mid), player.getName().substring(mid)};
+
+                    player.sendMessage("&a" + parts[0] + "&c&l" + parts[1] + " = §a" + parts[0] + "§c§l" + parts[1]);
+                }
+
                 player.spigot().sendMessage(new TextComponent(ChatColor.BLUE + "--------------------------------------------"));
             }
 
