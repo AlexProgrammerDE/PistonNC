@@ -38,7 +38,9 @@ public class JoinListener implements Listener {
 
         if (plugin.getConfig().getString(e.getPlayer().getName()) != null) {
             player.setDisplayName(plugin.getConfig().getString(player.getName()));
-            player.setPlayerListName(plugin.getConfig().getString(player.getName()));
+
+            if (plugin.getConfig().getBoolean("changePlayerListName"))
+                player.setPlayerListName(plugin.getConfig().getString(player.getName()));
         }
     }
 }
